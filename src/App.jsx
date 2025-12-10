@@ -51,14 +51,16 @@ const activitiesLibrary = [
     title: 'Bow Ready Goes',
     durationMinutes: 2,
     icon: '🎻',
-    helperText: 'Violin under your chin, quiet feet, soft shoulders. Start and stop your bow together.',
+    helperText:
+      'Violin under your chin, quiet feet, soft shoulders. Start and stop your bow together.',
   },
   {
     id: 'finger-taps-a',
     title: 'Finger Taps on A',
     durationMinutes: 2,
     icon: '🖐️',
-    helperText: 'On the A string, tap your fingers down and lift them gently like tiny dancers.',
+    helperText:
+      'On the A string, tap your fingers down and lift them gently like tiny dancers.',
   },
   {
     id: 'tiny-bows-middle',
@@ -72,7 +74,8 @@ const activitiesLibrary = [
     title: 'Listen & Air-Bow',
     durationMinutes: 3,
     icon: '🎧',
-    helperText: 'Imagine your song in your head and move your bow in the air while you listen inside.',
+    helperText:
+      'Imagine your song in your head and move your bow in the air while you listen inside.',
   },
 ]
 
@@ -546,7 +549,10 @@ function App() {
                   </div>
 
                   {showReflection && (
-                    <div className="card-surface px-4 py-3 rounded-3xl border border-slate-700/80 flex flex-col gap-3" aria-label="How did this feel?">
+                    <div
+                      className="card-surface px-4 py-3 rounded-3xl border border-slate-700/80 flex flex-col gap-3"
+                      aria-label="How did this feel?"
+                    >
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex flex-col gap-1">
                           <p className="text-sm font-medium text-slate-50">How did that feel?</p>
@@ -602,7 +608,9 @@ function App() {
                             <span className="text-xs sm:text-sm text-slate-100">{act.title}</span>
                           </div>
                           <div className="flex flex-col items-end">
-                            <span className="text-[11px] text-slate-400">{act.durationMinutes} min</span>
+                            <span className="text-[11px] text-slate-400">
+                              {act.durationMinutes} min
+                            </span>
                             <span className="text-[11px] text-slate-300">
                               {activityReflectionLabel(act.id)}
                             </span>
@@ -740,6 +748,7 @@ function App() {
     </main>
   )
 }
+
 function formatTime(seconds) {
   if (seconds == null) return '00:00'
   const s = Math.max(0, seconds)
