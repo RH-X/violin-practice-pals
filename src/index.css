@@ -3,42 +3,40 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  @apply bg-backdrop text-slate-50 antialiased;
-  line-height: 1.6;
+  @apply bg-backdrop text-ink antialiased;
+  line-height: 1.65;
 }
 
 main {
-  @apply min-h-screen flex items-center justify-center px-4 py-8;
+  @apply min-h-screen flex items-center justify-center px-4 py-18;
 }
 
 .card-surface {
-  @apply bg-surfaceSoft/80 border border-slate-800/80 shadow-soft rounded-3xl backdrop-blur-xl;
+  @apply bg-surface border border-line shadow-soft rounded-4xl;
 }
 
 .section-title {
-  @apply text-xl md:text-2xl font-semibold tracking-tight text-slate-50;
-  line-height: 1.4;
+  @apply text-title md:text-title-lg font-semibold text-ink;
 }
 
 .section-subtitle {
-  @apply text-sm md:text-base text-slate-300;
-  line-height: 1.5;
+  @apply text-body-sm md:text-base text-inkMuted;
 }
 
 .chip {
-  @apply inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs font-medium text-slate-200;
+  @apply inline-flex items-center gap-2 rounded-full border border-line bg-surfaceSoft px-3 py-1 text-xs font-medium text-inkMuted;
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-2.5 text-sm md:text-base font-semibold text-slate-950 shadow-soft hover:bg-accentSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200;
+  @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-2.5 text-sm md:text-base font-semibold text-backdrop shadow-soft hover:bg-accentSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop transition duration-200;
 }
 
 .button-ghost {
-  @apply inline-flex items-center justify-center rounded-2xl border border-slate-700 px-4 py-2.5 text-sm md:text-base font-medium text-slate-100 hover:bg-slate-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200;
+  @apply inline-flex items-center justify-center rounded-2xl border border-accentSoft px-4 py-2.5 text-sm md:text-base font-medium text-ink hover:bg-surfaceMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop transition duration-200;
 }
 
 .section-shell {

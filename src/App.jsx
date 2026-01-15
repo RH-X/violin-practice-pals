@@ -279,16 +279,16 @@ function App() {
     <main>
       <div className="w-full max-w-4xl mx-auto">
         <header className="mb-4 sm:mb-6 flex flex-col gap-2 text-center">
-          <div className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs font-medium text-slate-300 mx-auto mb-2">
+          <div className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-surfaceSoft px-3 py-1 text-xs font-medium text-inkMuted mx-auto mb-2">
             <span role="img" aria-hidden="true">
               🎻
             </span>
             <span>Violin Practice Pals</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
+          <h1 className="text-hero sm:text-hero-lg font-semibold text-ink">
             Tiny practice adventures, one buddy at a time.
           </h1>
-          <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-300">
+          <p className="max-w-2xl mx-auto text-body-sm sm:text-base text-inkMuted">
             A calm, playful companion for short violin practice sessions — made for wiggly brains,
             big feelings, and growing musicians.
           </p>
@@ -312,10 +312,10 @@ function App() {
                       key={b.id}
                       type="button"
                       onClick={() => handleSelectBuddy(b.id)}
-                      className={`flex flex-col items-start gap-2 rounded-3xl border px-4 py-4 text-left transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                      className={`flex flex-col items-start gap-2 rounded-4xl border px-4 py-4 text-left transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop ${
                         isSelected
-                          ? 'border-accent bg-accentSoft/40 shadow-soft scale-105'
-                          : 'border-slate-700 bg-slate-900/60 hover:bg-slate-900'
+                          ? 'border-accent bg-accentSoft/30 shadow-soft scale-105'
+                          : 'border-line bg-surfaceSoft hover:bg-surfaceMuted'
                       }`}
                       aria-pressed={isSelected}
                     >
@@ -325,10 +325,10 @@ function App() {
                         className="h-16 w-16 object-contain"
                       />
                       <div className="flex flex-col gap-0.5">
-                        <span className="text-base sm:text-lg font-semibold text-slate-50">
+                        <span className="text-base sm:text-lg font-semibold text-ink">
                           {b.name}
                         </span>
-                        <span className="text-xs sm:text-sm text-slate-300">{b.label}</span>
+                        <span className="text-xs sm:text-sm text-inkMuted">{b.label}</span>
                       </div>
                     </button>
                   )
@@ -336,7 +336,7 @@ function App() {
               </div>
 
               <div className="flex items-center justify-between mt-2">
-                <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
+                <p className="text-xs sm:text-sm text-inkMuted max-w-sm">
                   You can change your buddy next time. Right now, just pick the one that feels fun.
                 </p>
                 <button
@@ -380,17 +380,17 @@ function App() {
                           key={emotion.id}
                           type="button"
                           onClick={() => setSelectedEmotionId(emotion.id)}
-                          className={`flex flex-col items-center gap-1 rounded-3xl border px-3 py-3 text-center transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                          className={`flex flex-col items-center gap-1 rounded-4xl border px-3 py-3 text-center transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop ${
                             isSelected
-                              ? 'border-accent bg-accentSoft/40 shadow-soft scale-105'
-                              : 'border-slate-700 bg-slate-900/60 hover:bg-slate-900'
+                              ? 'border-accent bg-accentSoft/30 shadow-soft scale-105'
+                              : 'border-line bg-surfaceSoft hover:bg-surfaceMuted'
                           }`}
                           aria-pressed={isSelected}
                         >
                           <span className="text-2xl" aria-hidden="true">
                             {emotion.icon}
                           </span>
-                          <span className="text-sm font-medium text-slate-50">{emotion.label}</span>
+                          <span className="text-sm font-medium text-ink">{emotion.label}</span>
                         </button>
                       )
                     })}
@@ -412,10 +412,10 @@ function App() {
                           key={area.id}
                           type="button"
                           onClick={() => toggleTension(area.id)}
-                          className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs sm:text-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                          className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs sm:text-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop ${
                             isSelected
-                              ? 'border-accent bg-accentSoft/40 shadow-soft text-slate-50 scale-110'
-                              : 'border-slate-700 bg-slate-900/60 text-slate-200 hover:bg-slate-900'
+                              ? 'border-accent bg-accentSoft/30 shadow-soft text-ink scale-110'
+                              : 'border-line bg-surfaceSoft text-inkSoft hover:bg-surfaceMuted'
                           }`}
                         >
                           <span>{area.label}</span>
@@ -426,7 +426,7 @@ function App() {
                 </div>
 
                 <div className="flex items-center justify-between mt-2">
-                  <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
+                  <p className="text-xs sm:text-sm text-inkMuted max-w-sm">
                     Noticing is already practice. You don&apos;t have to change anything; we just listen.
                   </p>
                   <button
@@ -456,23 +456,23 @@ function App() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                <div className="card-surface border border-dashed border-slate-700 px-4 py-3 rounded-3xl flex flex-col gap-2 bg-slate-950/30">
-                  <p className="text-xs uppercase tracking-wide text-slate-400">A common thought</p>
-                  <p className="text-sm md:text-base text-slate-300">{reframe.header}</p>
+                <div className="card-surface border border-dashed border-line px-4 py-3 rounded-4xl flex flex-col gap-2 bg-surfaceSoft">
+                  <p className="text-xs uppercase tracking-wide text-inkMuted">A common thought</p>
+                  <p className="text-sm md:text-base text-inkMuted">{reframe.header}</p>
                 </div>
-                <div className="card-surface px-4 py-3 rounded-3xl flex flex-col gap-2 bg-gradient-to-br from-accentMuted/70 to-slate-900/90 border border-accent/60">
-                  <p className="text-xs uppercase tracking-wide text-slate-200 flex items-center gap-1">
+                <div className="card-surface px-4 py-3 rounded-4xl flex flex-col gap-2 bg-gradient-to-br from-accentMuted/70 to-surfaceMuted border border-accent/60">
+                  <p className="text-xs uppercase tracking-wide text-inkSoft flex items-center gap-1">
                     <span role="img" aria-hidden="true">
                       🌱
                     </span>
                     <span>A new thought to try</span>
                   </p>
-                  <p className="text-sm md:text-base text-slate-50 font-medium">{reframe.positive}</p>
+                  <p className="text-sm md:text-base text-ink font-medium">{reframe.positive}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between mt-1">
-                <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
+                <p className="text-xs sm:text-sm text-inkMuted max-w-sm">
                   You don&apos;t have to believe it all the way. Just trying a new thought is enough.
                 </p>
                 <button
@@ -501,29 +501,29 @@ function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-[1.2fr_minmax(0,1fr)] gap-4 md:gap-6">
                 <div className="flex flex-col gap-3">
-                  <div className="card-surface px-4 py-4 rounded-3xl flex flex-col gap-3 border border-slate-700/80">
+                  <div className="card-surface px-4 py-4 rounded-4xl flex flex-col gap-3 border border-line">
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="h-11 w-11 rounded-2xl bg-slate-900 flex items-center justify-center text-2xl">
+                        <div className="h-11 w-11 rounded-2xl bg-surfaceMuted flex items-center justify-center text-2xl">
                           <span aria-hidden="true">{currentActivity.icon}</span>
                         </div>
                         <div className="flex flex-col">
-                          <p className="text-base md:text-lg font-semibold text-slate-50">
+                          <p className="text-base md:text-lg font-semibold text-ink">
                             {currentActivity.title}
                           </p>
-                          <p className="text-xs text-slate-400">
+                          <p className="text-xs text-inkMuted">
                             Step {currentActivityIndex + 1} of {sessionActivities.length}
                           </p>
                         </div>
                       </div>
                       <div className="flex flex-col items-end gap-1">
-                        <span className="text-xs uppercase tracking-wide text-slate-400">Timer</span>
-                        <p className="text-lg font-mono text-slate-50">
+                        <span className="text-xs uppercase tracking-wide text-inkMuted">Timer</span>
+                        <p className="text-lg font-mono text-ink">
                           {formatTime(activityTimeLeft ?? currentActivity.durationMinutes * 60)}
                         </p>
                       </div>
                     </div>
-                    <p className="text-sm text-slate-200 leading-snug">
+                    <p className="text-sm text-inkSoft leading-snug">
                       {currentActivity.helperText}
                     </p>
 
@@ -535,12 +535,12 @@ function App() {
                       >
                         {timerRunning ? 'Timer running…' : 'Start this step'}
                       </button>
-                      <p className="text-[11px] sm:text-xs text-slate-400 max-w-[9rem] text-right">
+                      <p className="text-[11px] sm:text-xs text-inkMuted max-w-[9rem] text-right">
                         When the timer ends, we&apos;ll check how it felt.
                       </p>
                     </div>
 
-                    <div className="mt-3 h-2 w-full rounded-full bg-slate-900/90 overflow-hidden">
+                    <div className="mt-3 h-2 w-full rounded-full bg-surfaceMuted/80 overflow-hidden">
                       <div
                         className="h-full bg-accentSoft transition-all duration-500"
                         style={{
@@ -556,18 +556,18 @@ function App() {
 
                   {showReflection && (
                     <div
-                      className="card-surface px-4 py-3 rounded-3xl border border-slate-700/80 flex flex-col gap-3"
+                      className="card-surface px-4 py-3 rounded-4xl border border-line flex flex-col gap-3"
                       aria-label="How did this feel?"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex flex-col gap-1">
-                          <p className="text-sm font-medium text-slate-50">How did that feel?</p>
-                          <p className="text-xs text-slate-400">
+                          <p className="text-sm font-medium text-ink">How did that feel?</p>
+                          <p className="text-xs text-inkMuted">
                             There&apos;s no wrong answer. We&apos;re just noticing.
                           </p>
                         </div>
                         {buddy && (
-                          <p className="text-[11px] text-slate-400 text-right">
+                          <p className="text-[11px] text-inkMuted text-right">
                             {buddy.name} says: Thanks for checking in.
                           </p>
                         )}
@@ -578,13 +578,13 @@ function App() {
                             key={opt.id}
                             type="button"
                             onClick={() => handleReflection(opt.id)}
-                            className="flex-1 min-w-[5rem] inline-flex flex-col items-center gap-1 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-center hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200"
+                            className="flex-1 min-w-[5rem] inline-flex flex-col items-center gap-1 rounded-2xl border border-line bg-surfaceSoft px-3 py-2 text-center hover:bg-surfaceMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-backdrop transition duration-200"
                             aria-label={opt.aria}
                           >
                             <span className="text-xl" aria-hidden="true">
                               {opt.icon}
                             </span>
-                            <span className="text-xs font-medium text-slate-50">{opt.label}</span>
+                            <span className="text-xs font-medium text-ink">{opt.label}</span>
                           </button>
                         ))}
                       </div>
@@ -592,8 +592,8 @@ function App() {
                   )}
                 </div>
 
-                <aside className="card-surface px-4 py-4 rounded-3xl border border-slate-800/80 flex flex-col gap-3 text-sm text-slate-200">
-                  <p className="text-xs uppercase tracking-wide text-slate-400">Today&apos;s steps</p>
+                <aside className="card-surface px-4 py-4 rounded-4xl border border-line flex flex-col gap-3 text-sm text-inkSoft">
+                  <p className="text-xs uppercase tracking-wide text-inkMuted">Today&apos;s steps</p>
                   <ol className="space-y-2">
                     {sessionActivities.map((act, idx) => {
                       const isCurrent = idx === currentActivityIndex
@@ -602,22 +602,22 @@ function App() {
                           key={act.id}
                           className={`flex items-center justify-between gap-2 rounded-2xl px-3 py-2 ${
                             isCurrent
-                              ? 'bg-slate-900/80 border border-accent/60'
-                              : 'bg-slate-900/40 border border-slate-800'
+                              ? 'bg-surfaceMuted border border-accent/60'
+                              : 'bg-surfaceSoft border border-line'
                           }`}
                         >
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-slate-400 w-6">{idx + 1}.</span>
+                            <span className="text-xs text-inkMuted w-6">{idx + 1}.</span>
                             <span className="text-base" aria-hidden="true">
                               {act.icon}
                             </span>
-                            <span className="text-xs sm:text-sm text-slate-100">{act.title}</span>
+                            <span className="text-xs sm:text-sm text-ink">{act.title}</span>
                           </div>
                           <div className="flex flex-col items-end">
-                            <span className="text-[11px] text-slate-400">
+                            <span className="text-[11px] text-inkMuted">
                               {act.durationMinutes} min
                             </span>
-                            <span className="text-[11px] text-slate-300">
+                            <span className="text-[11px] text-inkSoft">
                               {activityReflectionLabel(act.id)}
                             </span>
                           </div>
@@ -626,17 +626,17 @@ function App() {
                     })}
                   </ol>
 
-                  <div className="mt-2 rounded-2xl bg-slate-900/60 border border-slate-800 px-3 py-3 flex gap-3 items-start">
-                    <div className="h-8 w-8 rounded-2xl bg-slate-950 flex items-center justify-center text-lg">
+                  <div className="mt-2 rounded-2xl bg-surfaceSoft border border-line px-3 py-3 flex gap-3 items-start">
+                    <div className="h-8 w-8 rounded-2xl bg-surfaceMuted flex items-center justify-center text-lg">
                       <span aria-hidden="true">🌍</span>
                     </div>
-                    <div className="flex flex-col gap-1 text-xs text-slate-300">
-                      <p className="font-medium text-slate-100">You&apos;re not alone</p>
+                    <div className="flex flex-col gap-1 text-xs text-inkMuted">
+                      <p className="font-medium text-ink">You&apos;re not alone</p>
                       <p>
                         Other kids are practicing violin somewhere in the world right now. You&apos;re on the
                         same path.
                       </p>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-[11px] text-inkMuted/80">
                         Today&apos;s practice adventures: ★ {7 + (Object.keys(activityReflections).length || 0)}
                       </p>
                     </div>
@@ -660,58 +660,58 @@ function App() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-[1.2fr_minmax(0,1fr)] gap-4 md:gap-6">
-                <div className="card-surface px-4 py-4 rounded-3xl border border-slate-700/80 flex flex-col gap-3">
-                  <p className="text-sm font-medium text-slate-50 mb-1">Steps you tried</p>
+                <div className="card-surface px-4 py-4 rounded-4xl border border-line flex flex-col gap-3">
+                  <p className="text-sm font-medium text-ink mb-1">Steps you tried</p>
                   <ol className="space-y-2">
                     {sessionActivities.map((act, idx) => (
                       <li
                         key={act.id}
-                        className="flex items-center justify-between gap-2 rounded-2xl bg-slate-900/60 border border-slate-800 px-3 py-2"
+                        className="flex items-center justify-between gap-2 rounded-2xl bg-surfaceSoft border border-line px-3 py-2"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-slate-500 w-6">{idx + 1}.</span>
+                          <span className="text-xs text-inkMuted w-6">{idx + 1}.</span>
                           <span className="text-base" aria-hidden="true">
                             {act.icon}
                           </span>
-                          <span className="text-xs sm:text-sm text-slate-100">{act.title}</span>
+                          <span className="text-xs sm:text-sm text-ink">{act.title}</span>
                         </div>
-                        <span className="text-[11px] text-slate-300">
+                        <span className="text-[11px] text-inkSoft">
                           {activityReflectionLabel(act.id)}
                         </span>
                       </li>
                     ))}
                   </ol>
 
-                  <div className="mt-3 rounded-2xl bg-slate-900/70 border border-slate-800 px-3 py-3 flex gap-3 items-start">
-                    <div className="h-9 w-9 rounded-2xl bg-slate-950 flex items-center justify-center text-xl">
+                  <div className="mt-3 rounded-2xl bg-surfaceSoft border border-line px-3 py-3 flex gap-3 items-start">
+                    <div className="h-9 w-9 rounded-2xl bg-surfaceMuted flex items-center justify-center text-xl">
                       <span aria-hidden="true">💡</span>
                     </div>
-                    <div className="flex flex-col gap-1 text-sm text-slate-200">
-                      <p className="font-medium text-slate-50">How today felt</p>
-                      <p className="text-xs sm:text-sm text-slate-200">{deriveOverallMood()}</p>
+                    <div className="flex flex-col gap-1 text-sm text-inkSoft">
+                      <p className="font-medium text-ink">How today felt</p>
+                      <p className="text-xs sm:text-sm text-inkSoft">{deriveOverallMood()}</p>
                     </div>
                   </div>
                 </div>
 
-                <aside className="card-surface px-4 py-4 rounded-3xl border border-slate-800/80 flex flex-col gap-3 text-sm text-slate-200">
-                  <p className="text-xs uppercase tracking-wide text-slate-400">You&apos;re part of a crowd</p>
+                <aside className="card-surface px-4 py-4 rounded-4xl border border-line flex flex-col gap-3 text-sm text-inkSoft">
+                  <p className="text-xs uppercase tracking-wide text-inkMuted">You&apos;re part of a crowd</p>
                   <p>
                     Other violin players around the world are practicing pieces, bow holds, and tiny steps just
                     like you. Even when you can&apos;t see them, you&aposre in good company.
                   </p>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-inkMuted">
                     Coming soon: a short music track you can listen to while you rest after practicing.
                   </p>
 
                   {buddy && (
-                    <div className="mt-2 rounded-2xl bg-slate-900/70 border border-slate-800 px-3 py-3 flex gap-3 items-start">
+                    <div className="mt-2 rounded-2xl bg-surfaceSoft border border-line px-3 py-3 flex gap-3 items-start">
                       <img
                         src={buddy.avatar}
                         alt={buddy.name}
                         className="h-10 w-10 rounded-2xl object-contain flex-shrink-0"
                       />
-                      <div className="flex flex-col gap-1 text-xs sm:text-sm text-slate-200">
-                        <p className="font-medium text-slate-50">{buddy.name} says:</p>
+                      <div className="flex flex-col gap-1 text-xs sm:text-sm text-inkSoft">
+                        <p className="font-medium text-ink">{buddy.name} says:</p>
                         <p>
                           Thank you for practicing today. Every tiny bit grows your music. We can try again
                           another day.
