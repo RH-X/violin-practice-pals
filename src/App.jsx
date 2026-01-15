@@ -1,32 +1,36 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import maggiDog from './assets/unknown_5.png'
+import senzoBoy from './assets/unknown_4.png'
+import mayGirl from './assets/unknown_3.png'
+import kaiExpansive from './assets/unknown_2.png'
 
 const buddies = [
   {
     id: 'nova',
     name: 'Nova',
     label: 'Curious Explorer',
-    icon: '✨',
+    avatar: kaiExpansive,
     tone: 'gentle and encouraging',
   },
   {
     id: 'river',
     name: 'River',
     label: 'Calm Listener',
-    icon: '🌊',
+    avatar: mayGirl,
     tone: 'soothing and steady',
   },
   {
     id: 'kai',
     name: 'Kai',
     label: 'Brave Player',
-    icon: '🎮',
+    avatar: senzoBoy,
     tone: 'adventurous and upbeat',
   },
   {
     id: 'sky',
     name: 'Sky',
     label: 'Lightfoot Friend',
-    icon: '☁️',
+    avatar: maggiDog,
     tone: 'light and playful',
   },
 ]
@@ -308,16 +312,18 @@ function App() {
                       key={b.id}
                       type="button"
                       onClick={() => handleSelectBuddy(b.id)}
-                      className={`flex flex-col items-start gap-2 rounded-3xl border px-4 py-4 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                      className={`flex flex-col items-start gap-2 rounded-3xl border px-4 py-4 text-left transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                         isSelected
-                          ? 'border-accent bg-accentMuted/60 shadow-soft'
+                          ? 'border-accent bg-accentSoft/40 shadow-soft scale-105'
                           : 'border-slate-700 bg-slate-900/60 hover:bg-slate-900'
                       }`}
                       aria-pressed={isSelected}
                     >
-                      <span className="text-2xl" aria-hidden="true">
-                        {b.icon}
-                      </span>
+                      <img
+                        src={b.avatar}
+                        alt={b.name}
+                        className="h-16 w-16 object-contain"
+                      />
                       <div className="flex flex-col gap-0.5">
                         <span className="text-base sm:text-lg font-semibold text-slate-50">
                           {b.name}
@@ -374,9 +380,9 @@ function App() {
                           key={emotion.id}
                           type="button"
                           onClick={() => setSelectedEmotionId(emotion.id)}
-                          className={`flex flex-col items-center gap-1 rounded-3xl border px-3 py-3 text-center transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                          className={`flex flex-col items-center gap-1 rounded-3xl border px-3 py-3 text-center transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                             isSelected
-                              ? 'border-accent bg-accentMuted/60 shadow-soft'
+                              ? 'border-accent bg-accentSoft/40 shadow-soft scale-105'
                               : 'border-slate-700 bg-slate-900/60 hover:bg-slate-900'
                           }`}
                           aria-pressed={isSelected}
@@ -406,9 +412,9 @@ function App() {
                           key={area.id}
                           type="button"
                           onClick={() => toggleTension(area.id)}
-                          className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs sm:text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                          className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs sm:text-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                             isSelected
-                              ? 'border-accent bg-accentMuted/60 shadow-soft text-slate-50'
+                              ? 'border-accent bg-accentSoft/40 shadow-soft text-slate-50 scale-110'
                               : 'border-slate-700 bg-slate-900/60 text-slate-200 hover:bg-slate-900'
                           }`}
                         >
@@ -572,7 +578,7 @@ function App() {
                             key={opt.id}
                             type="button"
                             onClick={() => handleReflection(opt.id)}
-                            className="flex-1 min-w-[5rem] inline-flex flex-col items-center gap-1 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-center hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                            className="flex-1 min-w-[5rem] inline-flex flex-col items-center gap-1 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-center hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200"
                             aria-label={opt.aria}
                           >
                             <span className="text-xl" aria-hidden="true">
@@ -699,9 +705,11 @@ function App() {
 
                   {buddy && (
                     <div className="mt-2 rounded-2xl bg-slate-900/70 border border-slate-800 px-3 py-3 flex gap-3 items-start">
-                      <div className="h-9 w-9 rounded-2xl bg-slate-950 flex items-center justify-center text-xl">
-                        <span aria-hidden="true">{buddy.icon}</span>
-                      </div>
+                      <img
+                        src={buddy.avatar}
+                        alt={buddy.name}
+                        className="h-10 w-10 rounded-2xl object-contain flex-shrink-0"
+                      />
                       <div className="flex flex-col gap-1 text-xs sm:text-sm text-slate-200">
                         <p className="font-medium text-slate-50">{buddy.name} says:</p>
                         <p>

@@ -8,6 +8,7 @@
 
 body {
   @apply bg-backdrop text-slate-50 antialiased;
+  line-height: 1.6;
 }
 
 main {
@@ -20,10 +21,12 @@ main {
 
 .section-title {
   @apply text-xl md:text-2xl font-semibold tracking-tight text-slate-50;
+  line-height: 1.4;
 }
 
 .section-subtitle {
   @apply text-sm md:text-base text-slate-300;
+  line-height: 1.5;
 }
 
 .chip {
@@ -31,11 +34,11 @@ main {
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-2.5 text-sm md:text-base font-semibold text-slate-950 shadow-soft hover:bg-accentSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition;
+  @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-2.5 text-sm md:text-base font-semibold text-slate-950 shadow-soft hover:bg-accentSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200;
 }
 
 .button-ghost {
-  @apply inline-flex items-center justify-center rounded-2xl border border-slate-700 px-4 py-2.5 text-sm md:text-base font-medium text-slate-100 hover:bg-slate-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition;
+  @apply inline-flex items-center justify-center rounded-2xl border border-slate-700 px-4 py-2.5 text-sm md:text-base font-medium text-slate-100 hover:bg-slate-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition duration-200;
 }
 
 .section-shell {
@@ -44,4 +47,12 @@ main {
 
 .section-body {
   @apply flex flex-col gap-4 sm:gap-6;
+}
+
+.avatar-buddy {
+  @apply h-16 w-16 object-contain;
+}
+
+.avatar-small {
+  @apply h-10 w-10 object-contain;
 }
