@@ -25,7 +25,7 @@ const buddies = [
   {
     id: 'sky',
     name: 'Sky',
-    label: 'Lightfoot Friend',
+    label: 'Lightfoot Guide',
     icon: '☁️',
     tone: 'light and playful',
   },
@@ -94,7 +94,7 @@ const reframePhrases = {
   },
   excited: {
     header: 'Sometimes we feel super excited.',
-    positive: 'We can use that excitement to try fun, short practice adventures.',
+    positive: 'We can use that excitement to try fun, short practice activities.',
   },
   default: {
     header: 'Sometimes violin can feel a little tricky.',
@@ -282,10 +282,10 @@ function App() {
             <span>Violin Practice Pals</span>
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
-            Tiny practice adventures, one buddy at a time.
+            Tiny practice steps, guided one activity at a time.
           </h1>
           <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-300">
-            A calm, playful companion for short violin practice sessions — made for wiggly brains,
+            A calm, playful practice guide for short violin sessions — made for wiggly brains,
             big feelings, and growing musicians.
           </p>
         </header>
@@ -294,9 +294,9 @@ function App() {
           <section className="section-shell" aria-label="Choose practice buddy">
             <div className="section-body">
               <div className="flex flex-col gap-2">
-                <h2 className="section-title">Choose your practice pal</h2>
+                <h2 className="section-title">Choose your practice guide</h2>
                 <p className="section-subtitle">
-                  Pick a buddy to adventure with. They&apos;ll cheer you on while you practice.
+                  Pick a guide to help you through today's practice.
                 </p>
               </div>
 
@@ -331,7 +331,7 @@ function App() {
 
               <div className="flex items-center justify-between mt-2">
                 <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
-                  You can change your buddy next time. Right now, just pick the one that feels fun.
+                  You can pick a different guide next time. Right now, just choose the one that feels right.
                 </p>
                 <button
                   type="button"
@@ -352,9 +352,7 @@ function App() {
               <div className="flex flex-col gap-2">
                 <h2 className="section-title">How are you feeling?</h2>
                 <p className="section-subtitle">
-                  {buddy
-                    ? `${buddy.name} says: Before we play, let&apos;s notice how your body and feelings are doing.`
-                    : 'Before we play, let’s notice how your body and feelings are doing.'}
+                  Before we play, let&apos;s notice how your body and feelings are doing.
                 </p>
               </div>
 
@@ -421,7 +419,7 @@ function App() {
 
                 <div className="flex items-center justify-between mt-2">
                   <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
-                    Noticing is already practice. You don&apos;t have to change anything; we just listen.
+                    Noticing is already practice. You don&apos;t have to change anything.
                   </p>
                   <button
                     type="button"
@@ -429,7 +427,7 @@ function App() {
                     disabled={!selectedEmotionId}
                     onClick={handleContinueFromCheckin}
                   >
-                    {buddy ? `${buddy.name} says: Next` : 'Next'}
+                    Next
                   </button>
                 </div>
               </div>
@@ -443,9 +441,7 @@ function App() {
               <div className="flex flex-col gap-2">
                 <h2 className="section-title">Tiny mindset shift</h2>
                 <p className="section-subtitle">
-                  {buddy
-                    ? `${buddy.name} says: Sometimes our thoughts feel heavy. Let’s try a lighter one.`
-                    : 'Sometimes our thoughts feel heavy. Let’s try a lighter one.'}
+                  Sometimes our thoughts feel heavy. Let&apos;s try a lighter one.
                 </p>
               </div>
 
@@ -474,7 +470,7 @@ function App() {
                   className="button-primary"
                   onClick={startPracticeMenu}
                 >
-                  Start my practice adventure
+                  Start my practice session
                 </button>
               </div>
             </div>
@@ -485,11 +481,9 @@ function App() {
           <section className="section-shell" aria-label="Practice menu">
             <div className="section-body">
               <div className="flex flex-col gap-2">
-                <h2 className="section-title">Practice adventure</h2>
+                <h2 className="section-title">Practice session</h2>
                 <p className="section-subtitle">
-                  {buddy
-                    ? `${buddy.name} says: We picked a few tiny practice games. Let’s try them one at a time.`
-                    : 'We picked a few tiny practice games. Let’s try them one at a time.'}
+                  Here are a few tiny practice activities. Let&apos;s try them one at a time.
                 </p>
               </div>
 
@@ -530,7 +524,7 @@ function App() {
                         {timerRunning ? 'Timer running…' : 'Start this step'}
                       </button>
                       <p className="text-[11px] sm:text-xs text-slate-400 max-w-[9rem] text-right">
-                        When the timer ends, we&apos;ll check how it felt.
+                        When the timer ends, you&apos;ll reflect on how it felt.
                       </p>
                     </div>
 
@@ -560,11 +554,9 @@ function App() {
                             There&apos;s no wrong answer. We&apos;re just noticing.
                           </p>
                         </div>
-                        {buddy && (
-                          <p className="text-[11px] text-slate-400 text-right">
-                            {buddy.name} says: Thanks for checking in.
-                          </p>
-                        )}
+                        <p className="text-[11px] text-slate-400 text-right">
+                          Good noticing.
+                        </p>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {reflectionOptions.map((opt) => (
@@ -647,9 +639,7 @@ function App() {
               <div className="flex flex-col gap-2">
                 <h2 className="section-title">Today&apos;s practice story</h2>
                 <p className="section-subtitle">
-                  {buddy
-                    ? `${buddy.name} says: Thanks for playing today. Let’s see what you did.`
-                    : 'Thanks for playing today. Let’s see what you did.'}
+                  Great work today. Here&apos;s what you practiced.
                 </p>
               </div>
 
@@ -703,10 +693,8 @@ function App() {
                         <span aria-hidden="true">{buddy.icon}</span>
                       </div>
                       <div className="flex flex-col gap-1 text-xs sm:text-sm text-slate-200">
-                        <p className="font-medium text-slate-50">{buddy.name} says:</p>
                         <p>
-                          Thank you for practicing today. Every tiny bit grows your music. We can try again
-                          another day.
+                          Great practice today. Every tiny bit grows your music. Come back to try more another day.
                         </p>
                       </div>
                     </div>
@@ -729,7 +717,7 @@ function App() {
                         setShowReflection(false)
                       }}
                     >
-                      Start a new practice adventure
+                      Start a new practice session
                     </button>
                     <button
                       type="button"
